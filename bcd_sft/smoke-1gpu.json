@@ -1,0 +1,27 @@
+{
+  "model_path": "/data/250010186/hf/Llama-3.2-1B",
+  "output_dir": "checkpoints/bcd-sft/smoke-1gpu",
+  "nproc": 1,
+  "rank": 0,
+  "init_method": "initB_constant1",
+  "per_device_batch": 8,
+  "train_set_size": 1,
+  "test_set_size": 1,
+  "max_steps": 2,
+  "eval_steps": 1,
+  "metric": "eval_loss",
+  "defaults": {
+    "lr_exponent": 16,
+    "global_batch": 8,
+    "warmup_ratio": 0.05,
+    "adam_beta2": 0.999
+  },
+  "grids": {
+    "lr_exponent": [16],
+    "warmup_ratio": [0.05],
+    "adam_beta2": [0.999]
+  },
+  "order": ["lr_exponent", "warmup_ratio", "adam_beta2"],
+  "max_rounds": 1,
+  "min_improvement": 0.001
+}

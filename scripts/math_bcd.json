@@ -1,0 +1,71 @@
+{
+  "model_path": "/data/250010186/hf/Llama-3.2-1B",
+  "dataset_dir": "/data/250010186/SFT_code/muA-lora_math/data/metamathqa_38912_train_512_val_seed42",
+  "data_manifest": "checkpoints/data-contracts/metamathqa_38912_512_2epoch_seed42.json",
+  "nproc": 4,
+  "rank": 0,
+  "per_device_batch": 8,
+  "train_set_size": 1216,
+  "train_examples": 38912,
+  "test_set_size": 16,
+  "max_seq_length": 1024,
+  "epochs": 2,
+  "save_model": false,
+  "save_steps": 100000,
+  "metric": "eval_loss",
+  "defaults": {
+    "lr_exponent": 11,
+    "global_batch": 128,
+    "warmup_ratio": 0.05,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "final_lr_ratio": 0.1
+  },
+  "output_dir": "checkpoints/bcd-sft/math_38912_512_2epoch_5d",
+  "grids": {
+    "lr_exponent": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "global_batch": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "adam_beta1": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "adam_beta2": [
+      0.95,
+      0.99,
+      0.999
+    ],
+    "final_lr_ratio": [
+      0,
+      0.01,
+      0.1,
+      0.3
+    ]
+  },
+  "order": [
+    "lr_exponent",
+    "global_batch",
+    "adam_beta1",
+    "adam_beta2",
+    "final_lr_ratio"
+  ],
+  "max_rounds": 2,
+  "iterations": 39,
+  "min_improvement": 1e-05
+}
