@@ -4,6 +4,10 @@
 
 原项目的介绍保存在 [`README_upstream.md`](README_upstream.md)。本实验的配置以 `scripts/math_*.json` 和本文件为准。
 
+## 项目来源与改动
+
+本项目基于 [NanChanNN/muA-lora](https://github.com/NanChanNN/muA-lora) 开发。原项目作者为 Nan Chen、Soledad Villar 和 Soufiane Hayou，代码按 [MIT License](LICENSE) 授权。本仓库保留并修改了原项目的训练入口与部分搜索代码，增加了 MetaMathQA 的固定训练/验证划分、以最终 `eval_loss` 为目标的数学任务配置，以及 BCD、BO、随机坐标方法和一维 LR 基线的运行脚本。原项目 README 另存为 [`README_upstream.md`](README_upstream.md)，便于区分原项目说明与本实验设置。
+
 ## 数据与评判指标
 
 - 来源：[meta-math/MetaMathQA](https://huggingface.co/datasets/meta-math/MetaMathQA)，本地原始文件位于 `/data/250010186/hf/hub/datasets--meta-math--MetaMathQA/`。官方仓库只提供 train split。
